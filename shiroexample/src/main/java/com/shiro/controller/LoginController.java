@@ -66,4 +66,13 @@ public class LoginController {
 		request.setAttribute("errorMsg", "注册失败");
 		return "/index";
 	}
+	
+	@RequestMapping("/loginOut.do")
+	public String loginOut(HttpServletRequest request, HttpServletResponse response, TbUser user){
+		Subject subject = SecurityUtils.getSubject();
+		if(subject.isAuthenticated()){
+			subject.logout();
+		}
+		return "/index";
+	}
 }
