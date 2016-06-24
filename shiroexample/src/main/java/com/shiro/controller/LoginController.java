@@ -46,6 +46,13 @@ public class LoginController {
 		return "/index";
 	}
 	
+	/**
+	 * 注册
+	 * @param request
+	 * @param response
+	 * @param user
+	 * @return
+	 */
 	@RequestMapping("/register.do")
 	public String doRegister(HttpServletRequest request, HttpServletResponse response,  TbUser user){
 		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
