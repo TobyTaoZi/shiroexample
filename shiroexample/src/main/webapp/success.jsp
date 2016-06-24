@@ -3,7 +3,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>success</title>
+<title>登陆成功</title>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -14,21 +14,15 @@
 	-->
 
 </head>
-
 <body>
-	<div align="center">
-		<shiro:hasRole name="admin">
-  			欢迎有admin角色的用户！<shiro:principal />
-		</shiro:hasRole>
-		<shiro:hasPermission name="student:create">
-			欢迎有student:create权限的用户！<shiro:principal />
-		</shiro:hasPermission>
-		<shiro:hasRole name="teacher">
-			老师才有此权限<shiro:principal />
-		</shiro:hasRole>
-		<form action="<%=request.getContextPath()%>/login/loginOut.do">
-			<input type="submit" value="login out">
-		</form>
-	</div>
+	<frameset rows="100,*,26" cols="*" frameborder="NO" border="0" framespacing="0">
+			<frame src="top.jsp" name="topFrame" scrolling="no" noresize/>
+			<frameset cols="195,6,*" frameborder="NO" border="0" framespacing="0" name="menu">
+				<frame src="menu.jsp" name="leftFrame" id="leftFrame" scrolling="no" noresize/>
+				<frame src="welcome.jsp" name="midFrame" id="midFrame" scrolling="no" noresize/>
+				<frame src="<%=request.getContextPath() %>/welcome.jsp" name="main" id="main" scrolling="auto" noresize/>
+			</frameset>
+			<frame src="bottom.jsp" name="bottomFrame" scrolling="no" noresize/>
+	</frameset>
 </body>
 </html>
