@@ -33,7 +33,7 @@ public class LoginController {
 		UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(),user.getPassword());
 		try { 
 			subject.login(token);
-			return "/success";
+			return "/index";
 		} catch (UnknownAccountException uae) {
 			request.setAttribute("errorMsg", "用户不存在或密码错误");
 		} catch (IncorrectCredentialsException ice) {
@@ -43,7 +43,7 @@ public class LoginController {
 		} catch (AuthenticationException ae) {
 			request.setAttribute("errorMsg", "未知错误");
         }
-		return "/index";
+		return "/login";
 	}
 	
 	/**
