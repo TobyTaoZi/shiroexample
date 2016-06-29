@@ -1,5 +1,7 @@
 package com.shiro.dao;
 
+import java.util.List;
+
 import com.shiro.pojo.TbUser;
 
 public interface TbUserDao {
@@ -19,4 +21,6 @@ public interface TbUserDao {
     int updateByPrimaryKey(TbUser record);
 
     TbUser getByUserName(String userName);
+    
+    List<TbUser> getUserList();
 }

@@ -4,27 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <script src="./js/prototype.lite.js" type="text/javascript"></script>
-    <script src="./js/moo.fx.js" type="text/javascript"></script>
-    <script src="./js/moo.fx.pack.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="./css/skin.css" />
-    <script type="text/javascript">
-        window.onload = function () {
-            var contents = document.getElementsByClassName('content');
-            var toggles = document.getElementsByClassName('type');
-
-            var myAccordion = new fx.Accordion(
-            toggles, contents, {opacity: true, duration: 400}
-            );
-            myAccordion.showThisHideOpen(contents[0]);
-            for(var i=0; i<document .getElementsByTagName("a").length; i++){
-                var dl_a = document.getElementsByTagName("a")[i];
-                    dl_a.onfocus=function(){
-                        this.blur();
-                    }
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -40,7 +20,7 @@
                             </tr>
                         </table>
                         <ul class="RM">
-                            <li><a href="<%=request.getContextPath() %>/error.jsp" target="main">添加栏目</a></li>
+                            <li><a href="<%=request.getContextPath() %>/user/getUserList.do" target="main">查询用户</a></li>
                             <li><a href="./cat_manage.html" target="main">栏目管理</a></li>
                         </ul>
                     </div>
@@ -115,10 +95,29 @@
                             <li><a href="javascript:void(0)" target="main">图片上传</a></li>
                         </ul>
                     </div>
-                    <!-- *********** -->
                 </div>
             </td>
         </tr>
     </table>
+     <script src="./js/prototype.lite.js" type="text/javascript"></script>
+    <script src="./js/moo.fx.js" type="text/javascript"></script>
+    <script src="./js/moo.fx.pack.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var contents = document.getElementsByClassName('content');
+            var toggles = document.getElementsByClassName('type');
+
+            var myAccordion = new fx.Accordion(
+            toggles, contents, {opacity: true, duration: 400}
+            );
+            myAccordion.showThisHideOpen(contents[0]);
+            for(var i=0; i<document .getElementsByTagName("a").length; i++){
+                var dl_a = document.getElementsByTagName("a")[i];
+                    dl_a.onfocus=function(){
+                        this.blur();
+                    }
+            }
+        }
+    </script>
 </body>
 </html>

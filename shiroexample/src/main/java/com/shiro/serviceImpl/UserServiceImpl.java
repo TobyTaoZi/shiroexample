@@ -1,6 +1,7 @@
 package com.shiro.serviceImpl;
 
 
+import java.util.List;
 import java.util.Set;
 
 import javax.annotation.Resource;
@@ -44,5 +45,10 @@ public class UserServiceImpl implements UserService {
 	public int insertUser(TbUser tbUser) {
 		
 		return tbUserDao.insertSelective(tbUser);
+	}
+	
+	public List<TbUser> getUserList() {
+		
+		return tbUserDao.getUserList();
 	}
 }

@@ -61,10 +61,10 @@ public class LoginController {
 		int i = userService.insertUser(user);
 		if(i == 1){
 			request.setAttribute("errorMsg", "注册成功");
-			return "/index";
+			return "/login";
 		}
 		request.setAttribute("errorMsg", "注册失败");
-		return "/index";
+		return "/login";
 	}
 	
 	@RequestMapping("/loginOut.do")
@@ -73,6 +73,6 @@ public class LoginController {
 		if(subject.isAuthenticated()){
 			subject.logout();
 		}
-		return "/index";
+		return "/login";
 	}
 }
